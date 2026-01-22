@@ -52,3 +52,5 @@ int main(){
     cout<<"copied string "<<copied<<endl;
     cout<<"comparison result "<<stringcompare(string1,string2);
 }
+
+
