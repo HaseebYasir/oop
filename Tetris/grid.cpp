@@ -1,21 +1,106 @@
 #include<iostream>
+#include"blocks.h"
+//#include"block.cpp"
+#include"main.h"
+//#include<main.cpp>
 using namespace std;
-int main (){ // 
-    int rows=20;
-    int cols=10;
-    int** array=new int*[rows]; //Make array to store grid 
-    for(int i=0;i<rows;i++){
-        array[i]=new int [cols];
-    }
-    for(int i=0;i<rows;i++){
-        for(int j=0;j<cols;j++){//Initialize them to avoid garbage value 
-            array[i][j]=-1;
+int simulationsquare(int random,int square[][2],int grid[][10]){
+    int k = 0;
+    for(int i = 0; i < 20; i++){
+        int l = 0;
+        for (int j = 0;j < 10; j++ ){
+            if((i==0&&j==4)||(i==0&&j==5)||(i==1&&j==4)||(i==1&&j==5)){
+                grid[i][j]+=square[k][l];
+                l++;
+            }
+        k++;
         }
     }
-    for (int i = 0; i <rows; i++){//delete them for safety
-        delete [] array[i];
-    }
-    delete[] array;
-    array=nullptr;
-return 0;
+    return 1;
+}
+int simulationtower(int random,int tower[][1],int grid[][10]){
+    int k = 0;
+    for(int i = 0; i < 20; i++){
+        int l = 0;
+        for (int j = 0;j < 10; j++ ){
+            if(((i==0||i==1||i==2||i==3)&&j==4)){
+                grid[i][j]+=tower[k][l];
+                l++;
+            }
+        k++;
+        }
+    }    
+    return 1;
+}
+int simulationtblock(int random,int tblock[][3],int grid[][10]){
+    int k = 0;
+    for(int i = 0; i < 20; i++){
+        int l = 0;
+        for (int j = 0;j < 10; j++ ){
+            if((i==0||i==1)&&(j==3||j==4||j==5)){
+                grid[i][j]+=tblock[k][l];
+                l++;
+            }
+        k++;
+        }
+    }      
+    return 1;
+}
+int simulationzblock(int random,int zblock[][3],int grid[][10]){
+    int k = 0;
+    for(int i = 0; i < 20; i++){
+        int l = 0;
+        for (int j = 0;j < 10; j++ ){
+            if((i==0||i==1)&&(j==3||j==4||j==5)){
+                grid[i][j]+=zblock[k][l];
+                l++;
+            }
+        k++;
+        }
+    }   
+    return 1;    
+}
+int simulationreversezblock(int random,int reversezblock[][3],int grid[][10]){
+    int k = 0;
+    for(int i = 0; i < 20; i++){
+        int l = 0;
+        for (int j = 0;j < 10; j++ ){
+            if((i==0||i==1)&&(j==3||j==4||j==5)){
+                grid[i][j]+=reversezblock[k][l];
+                l++;
+            }
+        k++;
+        }
+    }     
+    return 1;
+}
+int simulationlblock(int random,int lblock[][3],int grid[][10]){
+    int k = 0;
+    for(int i = 0; i < 20; i++){
+        int l = 0;
+        for (int j = 0;j < 10; j++ ){
+            if((i==0||i==1)&&(j==3||j==4||j==5)){
+                grid[i][j]+=lblock[k][l];
+                l++;
+            }
+        k++;
+        }
+    }     
+    return 1;
+}
+int simulationreverselblock(int random,int reverselblock[][3],int grid[][10]){
+    int k = 0;
+    for(int i = 0; i < 20; i++){
+        int l = 0;
+        for (int j = 0;j < 10; j++ ){
+            if((i==0||i==1)&&(j==3||j==4||j==5)){
+                grid[i][j]+=reverselblock[k][l];
+                l++;
+            }
+        k++;
+        }
+    }  
+
+
+    return 1;
 }
